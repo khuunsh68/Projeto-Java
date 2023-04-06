@@ -11,9 +11,9 @@ Aluno 9: 15.5
 Aluno 10: 17.0
 Aluno 11: 17.0
 Aluno 12: 17.0
-Aluno 13: -1.0
+Aluno 13: 0.0
 Nota mais alta: 20.0
-Nota mais baixa: -1.0
-Media das notas: 15.846153846153847
+Nota mais baixa: 0.0
+Media das notas: 15.923076923076923
 Numero de positivas: 12(92.3076923076923%)
 Numero de negativas: 1(7.6923076923076925%)

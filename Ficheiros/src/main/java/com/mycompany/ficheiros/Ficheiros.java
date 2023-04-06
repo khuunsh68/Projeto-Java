@@ -57,7 +57,13 @@ public class Ficheiros {
                     nota -= 0.5; // -0.5 pontos pela resposta errada
                 }
             }
-            notasAlunos.add(nota);
+            
+            // Restrição para quando a nota do aluno for inferior a 0 ser dada a nota final de 0
+            if(nota >= 0) {
+                notasAlunos.add(nota);
+            } else {
+                notasAlunos.add(0.0);
+            }
         }
 
         // Nota mais alta e nota mais baixa
