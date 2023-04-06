@@ -16,7 +16,7 @@ public class Ficheiros {
 
         // Leitura do arquivo de respostas dos alunos
         List<List<Integer>> respostasAlunos = new ArrayList<>(); // Utilizado para armazenar várias listas de respostas, uma lista para cada aluno
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\gonca\\Desktop\\Projeto-Ficheiros\\respostasAlunos.txt"))) { // Vai ler o ficheiro
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\gonca\\Desktop\\Projeto-Java\\respostasAlunos.txt"))) { // Vai ler o ficheiro
             String linha;
             // Leva loop porque o arquivo tem uma linha de respostas para cada aluno precisando de loop para trocar de linha
             while ((linha = br.readLine()) != null) {
@@ -34,7 +34,7 @@ public class Ficheiros {
 
         // Leitura do arquivo de chave de respostas
         List<Integer> chaveRespostas = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\gonca\\Desktop\\Projeto-Ficheiros\\chaveRespostas.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\gonca\\Desktop\\Projeto-Java\\chaveRespostas.txt"))) {
             // Não leva loop pois a chave de respostas só contem uma linha com todas as corretas
             String linha = br.readLine();
             String[] respostas = linha.trim().split("\\s+");
@@ -63,12 +63,12 @@ public class Ficheiros {
         // Nota mais alta e nota mais baixa
         int notaMax = notasAlunos.get(0); // notaMax inicializado com o 1 elemento da lista
         int notaMin = notasAlunos.get(0); // notMin inicializado com o 1 elemento da lista
-        for(int i = 1; i < notasAlunos.size(); i++) { // Feito um loop para comparar a restante lista com as variáveis
+        for (int i = 1; i < notasAlunos.size(); i++) { // Feito um loop para comparar a restante lista com as variáveis
             int nota = notasAlunos.get(i);
-            if(nota > notaMax) {
+            if (nota > notaMax) {
                 notaMax = nota; // Máxima nota
             }
-            if(nota < notaMin) {
+            if (nota < notaMin) {
                 notaMin = nota; // Mínima nota
             }
         }
@@ -83,35 +83,35 @@ public class Ficheiros {
 
         // Número de positivas e respetiva percentagem
         int numPositivas = 0;
-        for(int nota : notasAlunos) {
-            if(nota >= 10) {
+        for (int nota : notasAlunos) {
+            if (nota >= 10) {
                 numPositivas++;
             }
         }
         double percPositivas = ((double) numPositivas / notasAlunos.size()) * 100; // Em percentagem
-        
+
         // Número de negativas e respetiva percentagem
         int numNegativas = 0;
         numNegativas = notasAlunos.size() - numPositivas;
         double percNegativas = ((double) numNegativas / notasAlunos.size()) * 100; // Em percentagem
-        
+
         // Exibe informação no ecrâ
         String info = "Classificacao de cada aluno:\n";
-        for(int i = 0; i < notasAlunos.size(); i++) {
-            info += "Aluno " + (i+1) + ": " + notasAlunos.get(i) + "\n";
+        for (int i = 0; i < notasAlunos.size(); i++) {
+            info += "Aluno " + (i + 1) + ": " + notasAlunos.get(i) + "\n";
         }
         info += "Nota mais alta: " + notaMax + "\n";
         info += "Nota mais baixa: " + notaMin + "\n";
         info += "Media das notas: " + mediaNotas + "\n";
         info += "Numero de positivas: " + numPositivas + "(" + percPositivas + "%)" + "\n";
         info += "Numero de negativas: " + numNegativas + "(" + percNegativas + "%)" + "\n";
-        
+
         System.out.println(info); // Print de info
-        
+
         // Cria o ficheiro de informação se o mesmo ainda não existir
-        File file = new File("C:\\Users\\gonca\\Desktop\\Projeto-Ficheiros\\informacoes.txt");
-        
-        if(file.exists()) {
+        File file = new File("C:\\Users\\gonca\\Desktop\\Projeto-Java\\informacoes.txt");
+
+        if (file.exists()) {
             System.out.println("O arquivo informacoes ja existe!");
         } else {
             try {
@@ -120,10 +120,10 @@ public class Ficheiros {
                 System.out.println("Erro ao criar o arquivo!");
             }
         }
-        
+
         // Guarda as informações num ficheiro de texto criado
         try {
-            FileWriter fw = new FileWriter("C:\\Users\\gonca\\Desktop\\Projeto-Ficheiros\\informacoes.txt"); // Cria um ojeto FiWriter e define o nome do ficheiro
+            FileWriter fw = new FileWriter("C:\\Users\\gonca\\Desktop\\Projeto-Java\\informacoes.txt"); // Cria um ojeto FiWriter e define o nome do ficheiro
             fw.write(info); // Chama o metodo write para escrever a String info no ficheiro
             fw.close(); // Fecha o ficheiro aberto em modo escrita
         } catch (IOException e) { // Exceções de IO
