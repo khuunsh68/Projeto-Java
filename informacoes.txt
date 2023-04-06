@@ -1,0 +1,19 @@
+Classificacao de cada aluno:
+Aluno 1: 20
+Aluno 2: 18
+Aluno 3: 18
+Aluno 4: 16
+Aluno 5: 16
+Aluno 6: 18
+Aluno 7: 10
+Aluno 8: 18
+Aluno 9: 14
+Aluno 10: 16
+Aluno 11: 16
+Aluno 12: 16
+Aluno 13: 0
+Nota mais alta: 20
+Nota mais baixa: 0
+Media das notas: 15.076923076923077
+Numero de positivas: 12(92.3076923076923%)
+Numero de negativas: 1(7.6923076923076925%)

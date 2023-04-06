@@ -77,11 +77,12 @@ class Avaliacao {
         percNegativas = ((double) numNegativas / notasAlunos.size()) * 100; // Em percentagem
     }
     
-    public String getInfo() {
+    public String getInfo() { // Método getter para obter a variável info
         return info;
     }
 
     public void exibirInformacoes() {
+        // Vai exibir as informações de Avaliação
         info = "Classificacao de cada aluno:\n";
         for (int i = 0; i < notasAlunos.size(); i++) {
             info += "Aluno " + (i + 1) + ": " + notasAlunos.get(i) + "\n";
@@ -96,6 +97,7 @@ class Avaliacao {
     }
 }
 
+// Class que cria e guarda as informações anteriores no ficheiro criado
 class FicheiroInformacao {
 
     public void criaFicheiro() {
@@ -164,6 +166,7 @@ public class FcheirosClasses {
             return;
         }
 
+        // Métodos da Classe Avaliação chamados
         Avaliacao avaliacao = new Avaliacao(respostasAlunos, chaveRespostas);
         avaliacao.classificarAlunos();
         avaliacao.calcularNotaMaxMin();
@@ -172,8 +175,10 @@ public class FcheirosClasses {
         avaliacao.calcularNegativas();
         avaliacao.exibirInformacoes();
         
+        // Para obter variável info da Classe Avaliação de modo a utilizar na Classe FicheiroInformação
         String info = avaliacao.getInfo();
         
+        // Métodos da Classe FicheiroAvaliação chamados
         FicheiroInformacao fi = new FicheiroInformacao();
         fi.criaFicheiro();
         fi.guardaInformacoes(info);
