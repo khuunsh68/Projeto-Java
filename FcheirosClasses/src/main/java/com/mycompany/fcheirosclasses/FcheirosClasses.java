@@ -10,9 +10,9 @@ class Avaliacao {
 
     private List<List<Integer>> respostasAlunos;
     private List<Integer> chaveRespostas;
-    private List<Integer> notasAlunos;
-    private int notaMax;
-    private int notaMin;
+    private List<Double> notasAlunos;
+    private double notaMax;
+    private double notaMin;
     private double mediaNotas;
     private int numPositivas;
     private int numNegativas;
@@ -28,7 +28,7 @@ class Avaliacao {
     public void classificarAlunos() {
         notasAlunos = new ArrayList<>();
         for (List<Integer> respostas : respostasAlunos) {
-            int nota = 0;
+            double nota = 0.0;
             for (int i = 0; i < respostas.size(); i++) { // Comparação das respostas dos aliunos com as corretas
                 if (respostas.get(i) == chaveRespostas.get(i)) {
                     nota += 1; // 1 ponto pela resposta certa
@@ -44,7 +44,7 @@ class Avaliacao {
         notaMax = notasAlunos.get(0); // notaMax inicializado com o 1 elemento da lista
         notaMin = notasAlunos.get(0); // notMin inicializado com o 1 elemento da lista
         for (int i = 1; i < notasAlunos.size(); i++) { // Feito um loop para comparar a restante lista com as variáveis
-            int nota = notasAlunos.get(i);
+            double nota = notasAlunos.get(i);
             if (nota > notaMax) {
                 notaMax = nota; // Máxima nota
             }
@@ -56,7 +56,7 @@ class Avaliacao {
 
     public void calcularMedia() {
         double somaNotas = 0;
-        for (int nota : notasAlunos) {
+        for (double nota : notasAlunos) {
             somaNotas += nota;
         }
         mediaNotas = somaNotas / notasAlunos.size(); // Média final a dividir pelos 30 alunos
@@ -64,7 +64,7 @@ class Avaliacao {
 
     public void calcularPositivas() {
         numPositivas = 0;
-        for (int nota : notasAlunos) {
+        for (double nota : notasAlunos) {
             if (nota >= 10) {
                 numPositivas++;
             }
