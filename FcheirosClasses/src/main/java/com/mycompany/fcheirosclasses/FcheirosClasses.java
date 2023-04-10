@@ -20,6 +20,7 @@ class Avaliacao {
     private double percNegativas;
     private String info;
 
+    // Construtor
     public Avaliacao(List<List<Integer>> respostasAlunos, List<Integer> chaveRespostas) {
         this.respostasAlunos = respostasAlunos;
         this.chaveRespostas = chaveRespostas;
@@ -29,10 +30,10 @@ class Avaliacao {
         notasAlunos = new ArrayList<>();
         for (List<Integer> respostas : respostasAlunos) {
             double nota = 0.0;
-            for (int i = 0; i < respostas.size(); i++) { // Comparação das respostas dos aliunos com as corretas
+            for (int i = 0; i < respostas.size(); i++) { // Comparação das respostas dos alunos com as corretas
                 if (respostas.get(i) == chaveRespostas.get(i)) {
                     nota += 1; // 1 ponto pela resposta certa
-                } else if (respostas.get(i) != null) { // Resposta errada e diferente de resposta em branco(null) também
+                } else if (respostas.get(i) != 0) { // Resposta errada e diferente de 0
                     nota -= 0.5; // -0.5 pontos pela resposta errada
                 }
             }
