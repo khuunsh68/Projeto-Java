@@ -1,0 +1,36 @@
+Classificacao de cada aluno:
+Aluno 1: 20.0
+Aluno 2: 14.0
+Aluno 3: 20.0
+Aluno 4: 15.5
+Aluno 5: 20.0
+Aluno 6: 14.0
+Aluno 7: 20.0
+Aluno 8: 14.0
+Aluno 9: 20.0
+Aluno 10: 14.5
+Aluno 11: 18.5
+Aluno 12: 15.5
+Aluno 13: 20.0
+Aluno 14: 14.0
+Aluno 15: 18.5
+Aluno 16: 11.0
+Aluno 17: 20.0
+Aluno 18: 15.5
+Aluno 19: 18.5
+Aluno 20: 14.0
+Aluno 21: 15.5
+Aluno 22: 14.5
+Aluno 23: 20.0
+Aluno 24: 15.5
+Aluno 25: 20.0
+Aluno 26: 12.5
+Aluno 27: 20.0
+Aluno 28: 14.0
+Aluno 29: 16.5
+Aluno 30: 3.5
+Nota mais alta: 20.0
+Nota mais baixa: 3.5
+Media das notas: 16.32
+Numero de positivas: 29(96.67%)
+Numero de negativas: 1(3.33%)

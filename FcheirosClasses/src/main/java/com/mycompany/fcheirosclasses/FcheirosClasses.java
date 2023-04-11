@@ -95,9 +95,9 @@ class Avaliacao {
         }
         info += "Nota mais alta: " + notaMax + "\n";
         info += "Nota mais baixa: " + notaMin + "\n";
-        info += "Media das notas: " + mediaNotas + "\n";
-        info += "Numero de positivas: " + numPositivas + "(" + percPositivas + "%)" + "\n";
-        info += "Numero de negativas: " + numNegativas + "(" + percNegativas + "%)" + "\n";
+        info += "Media das notas: " + String.format(Locale.US, "%.2f", mediaNotas) + "\n";
+        info += "Numero de positivas: " + numPositivas + "(" + String.format(Locale.US, "%.2f", percPositivas) + "%)" + "\n";
+        info += "Numero de negativas: " + numNegativas + "(" + String.format(Locale.US, "%.2f", percNegativas) + "%)" + "\n";
 
         System.out.println(info); // Print de info
     }
@@ -108,7 +108,7 @@ class FicheiroInformacao {
 
     public void criaFicheiro() {
         // Cria o ficheiro de informação se o mesmo ainda não existir
-        File file = new File("C:\\Users\\gonca\\Desktop\\Projeto-Java\\informacoes.txt");
+        File file = new File("C:\\Users\\Lenovo\\OneDrive\\Área de Trabalho\\Projeto-Java\\informacoes.txt");
 
         if (file.exists()) {
             System.out.println("O arquivo informacoes ja existe!");
@@ -124,7 +124,7 @@ class FicheiroInformacao {
     public void guardaInformacoes(String info) {
         // Guarda as informações num ficheiro de texto criado
         try {
-            FileWriter fw = new FileWriter("C:\\Users\\gonca\\Desktop\\Projeto-Java\\informacoes.txt"); // Cria um ojeto FiWriter e define o nome do ficheiro
+            FileWriter fw = new FileWriter("C:\\Users\\Lenovo\\OneDrive\\Área de Trabalho\\Projeto-Java\\informacoes.txt"); // Cria um ojeto FiWriter e define o nome do ficheiro
             fw.write(info); // Chama o metodo write para escrever a String info no ficheiro
             fw.close(); // Fecha o ficheiro aberto em modo escrita
         } catch (IOException e) { // Exceções de IO
@@ -142,7 +142,7 @@ public class FcheirosClasses {
     public static void main(String[] args) {
         // Leitura do arquivo de respostas dos alunos
         List<List<Integer>> respostasAlunos = new ArrayList<>(); // Utilizado para armazenar várias listas de respostas, uma lista para cada aluno
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\gonca\\Desktop\\Projeto-Java\\respostasAlunos.txt"))) { // Vai ler o ficheiro
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Lenovo\\OneDrive\\Área de Trabalho\\Projeto-Java\\respostasAlunos.txt"))) { // Vai ler o ficheiro
             String linha;
             // Leva loop porque o arquivo tem uma linha de respostas para cada aluno precisando de loop para trocar de linha
             while ((linha = br.readLine()) != null) {
@@ -160,7 +160,7 @@ public class FcheirosClasses {
 
         // Leitura do arquivo de chave de respostas
         List<Integer> chaveRespostas = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\gonca\\Desktop\\Projeto-Java\\chaveRespostas.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Lenovo\\OneDrive\\Área de Trabalho\\Projeto-Java\\chaveRespostas.txt"))) {
             // Não leva loop pois a chave de respostas só contem uma linha com todas as corretas
             String linha = br.readLine();
             String[] respostas = linha.trim().split("\\s+");
