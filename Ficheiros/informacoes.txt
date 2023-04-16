@@ -1,9 +1,0 @@
-Classificacao de cada aluno:
-Aluno 1: 20
-Aluno 2: 18
-Aluno 3: 18
-Nota mais alta: 20
-Nota mais baixa: 18
-Media das notas: 18.666666666666668
-Numero de positivas: 3(100.0%)
-Numero de negativas: 0(0.0%)
