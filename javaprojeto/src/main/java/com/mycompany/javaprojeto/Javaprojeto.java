@@ -31,14 +31,13 @@ class Avaliacao {
             List<Integer> resposta = respostas.get(i);
             double nota = 0;
             boolean emBranco = true;
-            for (int j = 0; j < resposta.size(); j++) {
-                int escolha = resposta.get(j);
-                if (escolha != 0) {
+            for (int j = 0; j < resposta.size(); j++) { // Comparação das respostas com a chave de respostas
+                if (respostas.get(j) != 0) {
                     emBranco = false;
-                    if (escolha == chave.get(j)) {
-                        nota += 1;
+                    if (respostas.get(j) == chave.get(j)) {
+                        nota += 1; // Resposta certa, 1 valor
                     } else {
-                        nota -= 0.5;
+                        nota -= 0.5; // Resposta errada, -0.5 valores
                     }
                 }
             }
@@ -153,7 +152,6 @@ class FicheiroInformacao {
 public class Javaprojeto {
 
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
 
         // Lê o arquivo com a chave de respostas
         String ficheiroChave = "C:\\Users\\gonca\\Desktop\\projeto-java-update\\respostas.txt";
