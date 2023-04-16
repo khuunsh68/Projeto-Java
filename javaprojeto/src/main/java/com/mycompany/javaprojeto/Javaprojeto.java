@@ -32,9 +32,10 @@ class Avaliacao {
             double nota = 0;
             boolean emBranco = true;
             for (int j = 0; j < resposta.size(); j++) { // Comparação das respostas com a chave de respostas
-                if (respostas.get(j) != 0) {
+                int comparacao = resposta.get(j);
+                if (comparacao != 0) {
                     emBranco = false;
-                    if (respostas.get(j) == chave.get(j)) {
+                    if (comparacao == chave.get(j)) {
                         nota += 1; // Resposta certa, 1 valor
                     } else {
                         nota -= 0.5; // Resposta errada, -0.5 valores
@@ -101,6 +102,7 @@ class Avaliacao {
     
     public void exibirInformacoes() {
         // Output das informações
+        output = "";
         output += "Classificação de cada aluno:\n";
         for (int i = 0; i < notas.size(); i++) {
             output += "Aluno " + (i + 1) + ": " + notas.get(i) + "\n";
@@ -120,7 +122,7 @@ class FicheiroInformacao {
     
     public void criaFicheiro() {
     // Cria o ficheiro de informação se o mesmo ainda não existir
-    File file = new File("C:\\Users\\gonca\\Desktop\\projeto-java-update\\informacoes.txt");
+    File file = new File("C:\\Users\\gonca\\Desktop\\Projeto-Java\\informacoes.txt");
 
         if (file.exists()) {
             System.out.println("O arquivo informacoes ja existe!");
@@ -136,7 +138,7 @@ class FicheiroInformacao {
     public void guardaInformacoes(String output) {
         // Guarda as informações num ficheiro de texto criado
         try {
-            FileWriter fw = new FileWriter("C:\\Users\\gonca\\Desktop\\projeto-java-update\\informacoes.txt"); // Cria um ojeto FiWriter e define o nome do ficheiro
+            FileWriter fw = new FileWriter("C:\\Users\\gonca\\Desktop\\Projeto-Java\\informacoes.txt"); // Cria um ojeto FiWriter e define o nome do ficheiro
             fw.write(output); // Chama o metodo write para escrever a String info no ficheiro
             fw.close(); // Fecha o ficheiro aberto em modo escrita
         } catch (IOException e) { // Exceções de IO
@@ -154,7 +156,7 @@ public class Javaprojeto {
     public static void main(String[] args) throws Exception {
 
         // Lê o arquivo com a chave de respostas
-        String ficheiroChave = "C:\\Users\\gonca\\Desktop\\projeto-java-update\\respostas.txt";
+        String ficheiroChave = "C:\\Users\\gonca\\Desktop\\Projeto-Java\\respostas.txt";
         Scanner chaveScanFicheiro = new Scanner(new File(ficheiroChave));
         List<Integer> chave = new ArrayList<>();
         while (chaveScanFicheiro.hasNextInt()) {
@@ -163,7 +165,7 @@ public class Javaprojeto {
         chaveScanFicheiro.close();
         
         // Lê o arquivo de objetos com as respostas dos alunos
-        String ficheiroRespostas = "C:\\Users\\gonca\\Desktop\\projeto-java-update\\respostasTurma";
+        String ficheiroRespostas = "C:\\Users\\gonca\\Desktop\\Projeto-Java\\respostasTurma";
         ObjectInputStream obj = new ObjectInputStream(new FileInputStream(ficheiroRespostas));
         List<List<Integer>> respostas = (List<List<Integer>>) obj.readObject();
         obj.close();
